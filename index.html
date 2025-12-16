@@ -3,23 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <title>Christmas Tree ⭐🎄</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+  margin:0;
+  background:black;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+#tree{
+  position:relative;
+  width:300px;
+  height:400px;
+}
+
+.star{
+  position:absolute;
+  width:4px;
+  height:4px;
+  background:#0f0;
+  border-radius:50%;
+  box-shadow:0 0 8px #0f0;
+}
+</style>
 </head>
+
 <body>
 
-<div class="a3d" id="tree"></div>
+<div id="tree"></div>
 
 <script>
 const tree = document.getElementById("tree");
 
-for (let i = 0; i < 400; i++) {
+for(let i=0;i<500;i++){
   const star = document.createElement("div");
-  star.className = "🌟";
+  star.className="star";
 
-  star.style.setProperty("--rox", Math.random());
-  star.style.setProperty("--roy", Math.random());
-  star.style.setProperty("--roz", Math.random());
-  star.style.setProperty("--sf", Math.random() * 0.8 + 0.2);
+  const y = Math.random();
+  const width = y * 300;
+
+  star.style.left = (150 - width/2 + Math.random()*width) + "px";
+  star.style.top = (y * 400) + "px";
 
   tree.appendChild(star);
 }

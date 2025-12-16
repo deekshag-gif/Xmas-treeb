@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Christmas Tree ⭐🎄</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="a3d" id="tree"></div>
+
+<script>
+const tree = document.getElementById("tree");
+
+for (let i = 0; i < 400; i++) {
+  const star = document.createElement("div");
+  star.className = "🌟";
+
+  star.style.setProperty("--rox", Math.random());
+  star.style.setProperty("--roy", Math.random());
+  star.style.setProperty("--roz", Math.random());
+  star.style.setProperty("--sf", Math.random() * 0.8 + 0.2);
+
+  tree.appendChild(star);
+}
+</script>
+
+</body>
+</html>
